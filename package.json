@@ -1,0 +1,20 @@
+{
+  "name": "starboard-bot",
+  "version": "1.0.0",
+  "description": "Simple starboard bot",
+  "main": "./src/index.js",
+  "repository": "https://github.com/BlackB1RD-Development/starboard-bot.git",
+  "author": "jamespark <jamesparkdev@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "xo": "^0.24.0"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "dependencies": {
+    "discord.js": "discordjs/discord.js"
+  }
+}
