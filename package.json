@@ -1,20 +1,67 @@
 {
   "name": "starboard-bot",
   "version": "1.0.0",
-  "description": "Simple starboard bot",
-  "main": "./src/index.js",
-  "repository": "https://github.com/BlackB1RD-Development/starboard-bot.git",
-  "author": "jamespark <jamesparkdev@gmail.com>",
+  "description": "A Starboard Bot for the BlackB1RD-Development Discord Server.",
+  "keywords": [
+    "blackb1rd",
+    "development",
+    "blackb1rd-development",
+    "blackb1rd development",
+    "discord",
+    "bot",
+    "starboard",
+    "discord-bot",
+    "discord bot",
+    "starboard-bot",
+    "starboard bot"
+  ],
+  "homepage": "https://github.com/BlackB1RD-Development/starboard-bot#readme",
   "license": "MIT",
-  "private": false,
+  "readme": "README.md",
+  "bugs": {
+    "email": "blackbird.d3v@gmail.com",
+    "url": "https://github.com/BlackB1RD-Development/starboard-bot/issues"
+  },
+  "author": {
+    "name": "BlackB1RD-Development",
+    "email": "blackbird.d3v@gmail.com",
+    "url": "https://github.com/BlackB1RD-Development"
+  },
+  "contributors": [
+    {
+      "name": "BlackB1RD-Development",
+      "email": "blackbird.d3v@gmail.com",
+      "url": "https://github.com/BlackB1RD-Development"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "BlackB1RD-Development",
+      "email": "blackbird.d3v@gmail.com",
+      "url": "https://github.com/BlackB1RD-Development"
+    }
+  ],
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackB1RD-Development/starboard-bot.git"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "xo": "^0.24.0"
+    "xo": "latest"
   },
   "scripts": {
     "test": "xo"
   },
-  "dependencies": {
-    "discord.js": "discordjs/discord.js"
+  "xo": {
+    "extends": "./.eslintrc.json"
   }
 }
