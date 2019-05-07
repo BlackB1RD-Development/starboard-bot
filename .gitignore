@@ -80,3 +80,6 @@ docs/
 
 # Ignoring GitHub folder
 .github/
+
+# Ignoring vscode
+.vscode/
