@@ -4,9 +4,10 @@
 
 // Requires - Files
 const StarBoardClient = require('./lib/Client.js');
-const config = require('./src/config.json');
 
 // Assignments
 const client = new StarBoardClient();
+client.config = require('./src/config.json');
+
 
 client.login(config.token);
