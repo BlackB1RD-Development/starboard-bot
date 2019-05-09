@@ -7,11 +7,16 @@ const path = require('path');
 
 // Requires - Files
 const StarBoardClient = require('./lib/Client.js');
-const { token } = require('./src/config.json');
+const env = require('dotenv');
+
+
+env.config({
+    path: path.join(__dirname, "src", ".env")
+});
 
 // Assignments
 const client = new StarBoardClient();
 
 client.loadCommands(path.join(__dirname, 'src', 'commands'));
 client.loadEvents(path.join(__dirname, 'src', 'events'));
-client.login(token);
+client.login(process.env.TOKEN);

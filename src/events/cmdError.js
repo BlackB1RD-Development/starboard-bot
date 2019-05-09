@@ -5,9 +5,6 @@
 // Requires - Packages
 const { logger } = require('tools-kit');
 
-// Requires - Files
-const { errorsLogs } = require('../config.json');
-
 // Assignments
 const name = __filename.replace(__dirname, '').replace('.js', '').replace(/\\/g, '');
 
@@ -21,7 +18,7 @@ module.exports = {
 
     try {
       message.reply(`There were an error with the ${command.aliases[0]} command.\nPlease try again later...`);
-      client.channels.get(errorsLogs).send(errorMessage);
+      client.channels.get(process.env.ERROR_CHANNEL).send(errorMessage);
     } finally {
       logger.trace({ tag: 'COMMAND ERROR' }, error);
     }

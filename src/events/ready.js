@@ -5,16 +5,13 @@
 // Requires - Packages
 const { logger } = require('tools-kit');
 
-// Requires - Files
-const { version } = require('../config.json');
-
 // Assignments
 const name = __filename.replace(__dirname, '').replace('.js', '').replace(/\\/g, '');
 
 module.exports = {
   name,
   execute: (client) => {
-    client.user.setActivity(`StarBoard Bot v${version}`);
+    client.user.setActivity(`StarBoard Bot v${process.env.VERSION}`);
     logger.success(`Ready!\nServing ${client.users.size} users in ${client.guilds.size} guilds.`);
   }
 };
