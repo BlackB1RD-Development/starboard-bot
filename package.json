@@ -53,7 +53,8 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "tools-kit": "git+https://github.com/BlackB1RD-Development/tools-kit.git"
   },
   "devDependencies": {
     "xo": "latest"
