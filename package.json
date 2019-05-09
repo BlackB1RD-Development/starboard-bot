@@ -54,8 +54,8 @@
   },
   "dependencies": {
     "discord.js": "git+https://github.com/discordjs/discord.js.git",
-    "dotenv": "^8.0.0",
-    "tools-kit": "git+https://github.com/BlackB1RD-Development/tools-kit.git"
+    "tools-kit": "git+https://github.com/BlackB1RD-Development/tools-kit.git",
+    "dotenv": "^8.0.0"
   },
   "devDependencies": {
     "xo": "latest"

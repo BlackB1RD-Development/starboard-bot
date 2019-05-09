@@ -5,7 +5,6 @@
 // Requires - Packages
 const path = require('path');
 
-
 // Assignments
 const category = __dirname.split(path.sep).pop().charAt(0).toUpperCase() + __dirname.split(path.sep).pop().slice(1).toString().trim();
 const name = __filename.replace(__dirname, '').replace('.js', '').replace(/\\/g, '');
