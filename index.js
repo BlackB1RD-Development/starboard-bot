@@ -12,6 +12,6 @@ const { token } = require('./src/config.json');
 // Assignments
 const client = new StarBoardClient();
 
-client.loadCommands(path.join(__dirname, 'commands'));
-client.loadEvents(path.join(__dirname, 'events'));
+client.loadCommands(path.join(__dirname, 'src', 'commands'));
+client.loadEvents(path.join(__dirname, 'src', 'events'));
 client.login(token);

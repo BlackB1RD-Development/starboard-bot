@@ -17,7 +17,7 @@ module.exports = {
   example: prefix + name,
   aliases: [name],
   category,
-  execute: (client, message, args) => {
+  execute: (client, message) => {
     message.channel.send('Pinging...')
       .then(m => {
         m.edit(`Pong!\nLatency is: ${m.createdTimestamp - message.createdTimestamp}ms.\nAPI latency is: ${Math.round(client.ping)}ms`);

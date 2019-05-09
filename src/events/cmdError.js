@@ -5,26 +5,25 @@
 // Requires - Packages
 const { logger } = require('tools-kit');
 
+// Requires - Files
+const { errorsLogs } = require('../config.json');
+
 // Assignments
 const name = __filename.replace(__dirname, '').replace('.js', '').replace(/\\/g, '');
 
 module.exports = {
   name,
   execute: (client, message, command, error) => {
-    const errorMessage = `
-    [COMMAND ERROR] ${this.name} [COMMAND ERROR]\n
-    Server: ${message.guild.name} (ID: ${message.guild.id})\n
-    Author: ${message.author.tag} (ID: ${message.author.id})\n\n
-    Error: ${error.message}
-    `;
+    const errorMessage = `[COMMAND ERROR] ${command.aliases[0].toUpperCase()} [COMMAND ERROR]` +
+    `\n\nServer: ${message.guild.name} (ID: ${message.guild.id})` +
+    `\nAuthor: ${message.author.tag} (ID: ${message.author.id})` +
+    `\n\nError: ${error.message}`;
 
     try {
       message.reply(`There were an error with the ${command.aliases[0]} command.\nPlease try again later...`);
       client.channels.get(errorsLogs).send(errorMessage);
-    } catch (err) {
-
     } finally {
       logger.trace({ tag: 'COMMAND ERROR' }, error);
     }
   }
-}
+};
