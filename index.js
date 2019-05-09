@@ -4,14 +4,20 @@
 
 // Requires - Packages
 const path = require('path');
+const dotenv = require('dotenv');
 
 // Requires - Files
 const StarBoardClient = require('./lib/Client.js');
-const { token } = require('./src/config.json');
 
 // Assignments
 const client = new StarBoardClient();
 
+// Settings dotenv variables
+dotenv.config({ path: path.join(__dirname, 'src', '.env') });
+
+// Loading commands & events
 client.loadCommands(path.join(__dirname, 'src', 'commands'));
 client.loadEvents(path.join(__dirname, 'src', 'events'));
-client.login(token);
+
+// Login to Discord
+client.login(process.env.TOKEN);
