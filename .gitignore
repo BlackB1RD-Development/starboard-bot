@@ -83,3 +83,6 @@ docs/
 
 # Ignoring vscode
 .vscode/
+
+# Ignoring database
+database.sql
