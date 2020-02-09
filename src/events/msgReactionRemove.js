@@ -25,7 +25,7 @@ module.exports = {
       }
       
       // Delete message if there is no stars left
-      if (post.stars - 1 == 0) return og.delete();
+      if (post.stars - 1 == 0) return og.delete(), client.provider.delete(post.starMessage);
 
       const emb = new MessageEmbed()
         .addField('Author', user.toString(), true)
