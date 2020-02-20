@@ -21,7 +21,7 @@ module.exports = {
       const og = channel.messages.get(post.starMessage);
       if (!og) {
         // Deleted Message
-        client.provider.delete(post.starMessage);
+        client.provider.deleteOne(post.starMessage);
         return;
       }
       
