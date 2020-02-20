@@ -20,7 +20,7 @@ module.exports = {
 
       const og = channel.messages.get(post.starMessage);
       if (!og) {
-        // Deleted message
+        // Deleted Message
         client.provider.delete(post.starMessage);
         return;
       }
