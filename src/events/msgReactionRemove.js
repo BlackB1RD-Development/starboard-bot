@@ -15,10 +15,10 @@ module.exports = {
       if (!post) return;
 
       // Updating
-      const channel = client.channels.get(process.env.CHANNEL);
+      const channel = client.channels.cache.get(process.env.CHANNEL);
       if (!channel) throw new Error('Client Found no default channel for starboard, please add one!');
 
-      const og = channel.messages.get(post.starMessage);
+      const og = channel.messages.cache.get(post.starMessage);
       if (!og) {
         // Deleted Message
         client.provider.deleteOne(post.starMessage);
@@ -27,7 +27,7 @@ module.exports = {
       
       const emb = new MessageEmbed()
         .addField('Author', user.toString(), true)
-        .addField('Channel', client.channels.get(post.channel).toString(), true)
+        .addField('Channel', client.channels.cache.get(post.channel).toString(), true)
         // eslint-disable-next-line quotes
         .addField('Jump', `Click [here](https://discordapp.com/channels/${process.env.GUILD}/${post.channel}/${post.message}) to jump to message in question.`)
         .setFooter(`Stars: ${post.stars - 1} ⭐`)
