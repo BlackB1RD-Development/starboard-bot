@@ -9,7 +9,7 @@ module.exports = {
   execute: async (client, reaction, user) => {
     if (!reaction.message.guild) return;
     if (reaction.emoji.name === '⭐') {
-      if (reaction.message.partial) await reaction.message.fetch();
+      if (reaction.message.partial) await reaction.message.fetch()
       const post = client.provider.findOne(reaction.message.id);
 
       if (!post) {
