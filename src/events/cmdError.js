@@ -18,7 +18,7 @@ module.exports = {
 
     try {
       message.reply(`There were an error with the ${command.aliases[0]} command.\nPlease try again later...`);
-      client.channels.get(process.env.ERRORS_CHANNEL).send(errorMessage);
+      client.channels.cache.get(process.env.ERRORS_CHANNEL).send(errorMessage);
     } finally {
       logger.trace({ tag: 'COMMAND ERROR' }, error);
     }
