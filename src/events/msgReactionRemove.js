@@ -9,6 +9,7 @@ module.exports = {
   execute: async (client, reaction, user) => {
     if (!reaction.message.guild) return;
     if (reaction.emoji.name === '⭐') {
+      if (message.partial) await reaction.message.fetch();
       const post = client.provider.findOne(reaction.message.id);
 
       if (!post) return;
@@ -19,11 +20,11 @@ module.exports = {
 
       const og = channel.messages.get(post.starMessage);
       if (!og) {
-        // Deleted message
-        client.provider.delete(post.starMessage);
+        // Deleted Message
+        client.provider.deleteOne(post.starMessage);
         return;
       }
-
+      
       const emb = new MessageEmbed()
         .addField('Author', user.toString(), true)
         .addField('Channel', client.channels.get(post.channel).toString(), true)

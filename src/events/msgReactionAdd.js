@@ -9,6 +9,7 @@ module.exports = {
   execute: async (client, reaction, user) => {
     if (!reaction.message.guild) return;
     if (reaction.emoji.name === '⭐') {
+      if (reaction.message.partial) await reaction.message.fetch();
       const post = client.provider.findOne(reaction.message.id);
 
       if (!post) {
@@ -23,7 +24,7 @@ module.exports = {
         const parsedLinks = msg.content.match(/^https?:\/\/(\w+\.)?imgur.com\/(\w*\d\w*)+(\.[a-zA-Z]{3})?$/);
         const attachments = msg.attachments && msg.attachments.first() ? msg.attachments.first() : undefined;
         if (parsedLinks && parsedLinks.length > 0) {
-          // removing links
+          // Removing links
           msg.content.replace(/^https?:\/\/(\w+\.)?imgur.com\/(\w*\d\w*)+(\.[a-zA-Z]{3})?$/, '');
         }
 
